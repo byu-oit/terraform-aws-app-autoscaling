@@ -48,6 +48,8 @@ resource "aws_cloudwatch_metric_alarm" "up" {
   evaluation_periods = var.step_up.alarm.evaluation_periods != null ? var.step_up.alarm.evaluation_periods : local.default_alarm_evaluation_periods
 
   alarm_actions = [aws_appautoscaling_policy.up.arn]
+
+  tags = var.tags
 }
 
 resource "aws_appautoscaling_policy" "down" {
@@ -85,4 +87,6 @@ resource "aws_cloudwatch_metric_alarm" "down" {
   evaluation_periods = var.step_down.alarm.evaluation_periods != null ? var.step_down.alarm.evaluation_periods : local.default_alarm_evaluation_periods
 
   alarm_actions = [aws_appautoscaling_policy.down.arn]
+
+  tags = var.tags
 }
