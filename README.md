@@ -4,7 +4,7 @@ Terraform module to create a simple autoscaling group with alarms that trigger p
 ## Usage
 ```hcl
 module "autoscaling" {
-  source = "git@github.com:byu-oit/terraform-aws-app-autoscaling.git?ref=v1.0.0"
+  source = "github.com/byu-oit/terraform-aws-app-autoscaling?ref=v1.0.1"
   app_name = "example"
   resource_id = "service/example/example"
   scalable_dimension = "ecs:service:DesiredCount"

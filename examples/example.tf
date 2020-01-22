@@ -6,7 +6,7 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 module "autoscaling" {
-  source = "git@github.com:byu-oit/terraform-aws-app-autoscaling.git?ref=v1.0.0"
+  source = "github.com/byu-oit/terraform-aws-app-autoscaling?ref=v1.0.1"
 //  source = "../"
   app_name = "example"
   resource_id = "service/example/example"
